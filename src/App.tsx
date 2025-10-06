@@ -1,9 +1,10 @@
 import React from "react";
+import "./App.css";
+
 import HelloWorld from "components/HelloWorld";
 import ModalProvider from "contexts/useModal";
 import HexGround from "components/Hexground";
-
-import "./App.css";
+import WidgetBoard from "components/WidgetBoard";
 
 const App: React.FC = () => (
     <ModalProvider>
@@ -11,6 +12,7 @@ const App: React.FC = () => (
         <div className="glass" style={{position: "absolute", padding: "0.5rem"}}>
             <HelloWorld />
         </div>
+        <WidgetBoard />
     </ModalProvider>
 );
 
