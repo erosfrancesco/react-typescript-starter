@@ -8,7 +8,7 @@ import "./App.css";
 const App: React.FC = () => (
     <ModalProvider>
         <HexGround />
-        <div style={{position: "absolute", padding: "0.5rem"}}>
+        <div className="glass" style={{position: "absolute", padding: "0.5rem"}}>
             <HelloWorld />
         </div>
     </ModalProvider>

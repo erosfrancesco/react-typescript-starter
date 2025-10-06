@@ -1,13 +1,15 @@
+@import "../../App.css";
+
 .bg-wrapper {
     width: 100%;
     height: 100%;
     opacity: 1;
     z-index: -1;
-    background: radial-gradient(#0c5d57 0%, transparent 80%);
+    background: radial-gradient(var(--primary-bg) 0%, transparent 80%);
 }
 
 .bg-hexagon-wrapper {
-    background: #0c3634;
+    background: var(--primary-strong);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -16,6 +18,6 @@
 
 .bg-hexagon-shape {
     stroke-width: 7.5;
-    fill: #0c3634;
-    stroke: #0c5d57;
+    fill: var(--primary-strong);
+    stroke: var(--primary-bg);
 }

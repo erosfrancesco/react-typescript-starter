@@ -1,3 +1,5 @@
+@import "../App.css";
+
 .modalWrapper {
     background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
@@ -5,14 +7,38 @@
     left: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
     z-index: 50;
-    /* bg-black fixed inset-0 bg-opacity-80 flex items-center justify-center z-50 */
+    width: 100vw;
+    height: 100vh;
 }
 
 .modalContent {
     padding: 1rem;
     border-radius: 1rem;
     min-width: 300px;
-    /* p-6 rounded shadow-lg min-w-[300px] */
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.modalContentWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.close {
+    background-color: var(--bg-danger);
+    color: var(--text);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.5rem;
+    margin: 0;
+    padding: 0;
+    margin-right: -0.5rem;
 }

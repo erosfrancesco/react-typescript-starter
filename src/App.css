@@ -1,9 +1,65 @@
+:root {
+    --body-bg: #0b0c11;
+    --text: white;
+    --primary-bg: #0c5d57;
+    --primary-strong: #0c3634;
+    --primary-light: #078987;
+    --secondary-bg: #d2ae67;
+    --bg-danger: #90282a;
+}
+
 body,
 #root {
     top: 0;
     left: 0;
     padding: 0;
     margin: 0;
-    background: black;
-    color: white;
+    background: var(--body-bg);
+    color: var(--text);
 }
+
+.shadow {
+    box-shadow: 0 0.1em 0.2em var(--bg-main);
+}
+
+.border {
+    border: var(--primary-bg) 0.07em solid;
+}
+
+.border-secondary {
+    border: solid 0.01em color-mix(in srgb, var(--secondary-bg), transparent 25%);
+    border-radius: 0.25rem;
+}
+
+.glass {
+    backdrop-filter: blur(0.1em);
+    background-color: transparent;
+}
+
+/*
+:root {
+  --bg-main: #0b0c11;
+
+  --bg-primary: #0c5d57;
+  --bg-primary-strong: #0c3634;
+
+  --bg-danger: #90282a;
+
+  --bg-save: #30a72c;
+  --bg-load: #078987;
+  --bg-config: #ff6c37;
+
+  --text-main: #dce3e6;
+  --text-main-strong: #d2ae67;
+
+  --border-primary: #0c5d57 0.07em solid;
+  --border-glass: inset 0 0 0.1em #dce3e6;
+
+  --box-shadow: 0 0.1em 0.2em var(--bg-main);
+  --box-shadow-strong: 0 0.2em 0.4em var(--bg-main);
+}
+
+
+            "boxShadow": "inset 0 0 0.1em white",
+            "borderRadius": "0.4em",
+/**/

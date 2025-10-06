@@ -1,8 +1,6 @@
 import React, {createContext, useContext, useState, type ReactNode} from "react";
 import "./useModal.css";
 
-// TODO: - INDEX
-
 export interface IModalContext {
     showModal: (content: ReactNode) => void;
     closeModal: () => void;
@@ -30,7 +28,10 @@ export default function ModalProvider({children}) {
             {open && (
                 <div className="modalWrapper" onClick={closeModal}>
                     <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-                        {content}
+                        <button className="close" onClick={closeModal}>
+                            X
+                        </button>
+                        <div className="modalContentWrapper border-secondary glass">{content}</div>
                     </div>
                 </div>
             )}
@@ -38,7 +39,7 @@ export default function ModalProvider({children}) {
     );
 }
 
-export function useModal() {
+export function useModal(): IModalContext {
     const ctx = useContext(ModalContext);
     if (!ctx) throw new Error("useModal must be used within a ModalProvider");
     return ctx;
