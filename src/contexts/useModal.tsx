@@ -1,0 +1,45 @@
+import React, {createContext, useContext, useState, type ReactNode} from "react";
+import "./useModal.css";
+
+// TODO: - INDEX
+
+export interface IModalContext {
+    showModal: (content: ReactNode) => void;
+    closeModal: () => void;
+}
+
+const ModalContext = createContext<IModalContext | undefined>(undefined);
+
+export default function ModalProvider({children}) {
+    const [open, setOpen] = useState(false);
+    const [content, setContent] = useState<ReactNode>(null);
+
+    const showModal = (modalContent: ReactNode) => {
+        setContent(modalContent);
+        setOpen(true);
+    };
+
+    const closeModal = () => {
+        setOpen(false);
+        setContent(null);
+    };
+
+    return (
+        <ModalContext.Provider value={{showModal, closeModal}}>
+            {children}
+            {open && (
+                <div className="modalWrapper" onClick={closeModal}>
+                    <div className="modalContent" onClick={(e) => e.stopPropagation()}>
+                        {content}
+                    </div>
+                </div>
+            )}
+        </ModalContext.Provider>
+    );
+}
+
+export function useModal() {
+    const ctx = useContext(ModalContext);
+    if (!ctx) throw new Error("useModal must be used within a ModalProvider");
+    return ctx;
+}

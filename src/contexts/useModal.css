@@ -1,0 +1,18 @@
+.modalWrapper {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    /* bg-black fixed inset-0 bg-opacity-80 flex items-center justify-center z-50 */
+}
+
+.modalContent {
+    padding: 1rem;
+    border-radius: 1rem;
+    min-width: 300px;
+    /* p-6 rounded shadow-lg min-w-[300px] */
+}

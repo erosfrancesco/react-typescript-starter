@@ -1,7 +1,7 @@
 import React from "react";
 
 const HelloWorld: React.FC = () => (
-    <>
+    <div>
         <h1>Hello World</h1>
 
         <hr />
@@ -16,7 +16,7 @@ const HelloWorld: React.FC = () => (
         <p>
             process.env.VERSION: <b>{process.env.VERSION}</b>
         </p>
-    </>
+    </div>
 );
 
 export default HelloWorld;
