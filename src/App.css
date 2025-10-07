@@ -6,6 +6,8 @@
     --primary-light: #078987;
     --secondary-bg: #d2ae67;
     --bg-danger: #90282a;
+
+    --border-width: 0.01rem;
 }
 
 body,
@@ -35,6 +37,26 @@ body,
     backdrop-filter: blur(0.1em);
     background-color: transparent;
 }
+
+@import './style.css';
+
+.striped-pattern {
+  background: repeating-linear-gradient(
+    0deg,
+    var(--primary-bg),
+    var(--primary-bg) 0.3rem,
+    var(--primary-strong) 0.3rem,
+    var(--primary-strong) 0.6rem
+  );
+}
+
+.gilded-border {
+  box-shadow: inset var(--border-width) var(--border-width) var(--border-width)*2 var(--border-width) var(--secondary-bg), 5px 5px 15px 5px rgba(0, 0, 0, 0), /* top */
+    inset var(--border-width) -var(--border-width) var(--border-width)*2 var(--border-width) var(--secondary-bg), 5px 5px 15px 5px rgba(0, 0, 0, 0), /**/
+    inset -var(--border-width) var(--border-width) var(--border-width)*2 var(--border-width) var(--secondary-bg), 5px 5px 15px 5px rgba(0, 0, 0, 0), /**/
+    inset -var(--border-width) -var(--border-width) var(--border-width)*2 var(--border-width) var(--secondary-bg), 5px 5px 15px 5px rgba(0, 0, 0, 0); /* bottom */
+}
+
 
 /*
 :root {
